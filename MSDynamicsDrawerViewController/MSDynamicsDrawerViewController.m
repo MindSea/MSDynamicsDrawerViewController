@@ -822,7 +822,7 @@ void MSDynamicsDrawerDirectionActionForMaskedValues(MSDynamicsDrawerDirection di
     for (MSDynamicsDrawerPaneState currentPaneState = MSDynamicsDrawerPaneStateClosed; currentPaneState <= MSDynamicsDrawerPaneStateOpenWide; currentPaneState++) {
         CGPoint paneStatePaneViewOrigin = [self paneViewOriginForPaneState:currentPaneState];
         CGPoint currentPaneViewOrigin = (CGPoint){roundf(self.paneView.frame.origin.x), roundf(self.paneView.frame.origin.y)};
-        CGFloat epsilon = 2.0;
+        CGFloat epsilon = 2.1;
         if ((fabs(paneStatePaneViewOrigin.x - currentPaneViewOrigin.x) < epsilon) && (fabs(paneStatePaneViewOrigin.y - currentPaneViewOrigin.y) < epsilon)) {
             validState = YES;
             *paneState = currentPaneState;
@@ -970,6 +970,7 @@ void MSDynamicsDrawerDirectionActionForMaskedValues(MSDynamicsDrawerDirection di
 
 - (void)setPaneViewControllerViewUserInteractionEnabled:(BOOL)enabled
 {
+    NSLog(@"@@@@ Pane view controller user interaction => %d (was %d)", enabled, self.paneViewController.view.userInteractionEnabled);
     self.paneViewController.view.userInteractionEnabled = enabled;
 }
 
