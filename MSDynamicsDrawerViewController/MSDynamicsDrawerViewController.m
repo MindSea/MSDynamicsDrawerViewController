@@ -381,6 +381,7 @@ void MSDynamicsDrawerDirectionActionForMaskedValues(MSDynamicsDrawerDirection di
 {
     [self replaceViewController:self.drawerViewController withViewController:drawerViewController inContainerView:self.drawerView completion:^{
         _drawerViewController = drawerViewController;
+        [_drawerViewController.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin ];
     }];
 }
 
@@ -970,7 +971,6 @@ void MSDynamicsDrawerDirectionActionForMaskedValues(MSDynamicsDrawerDirection di
 
 - (void)setPaneViewControllerViewUserInteractionEnabled:(BOOL)enabled
 {
-    NSLog(@"@@@@ Pane view controller user interaction => %d (was %d)", enabled, self.paneViewController.view.userInteractionEnabled);
     self.paneViewController.view.userInteractionEnabled = enabled;
 }
 
