@@ -1254,7 +1254,7 @@ void MSDynamicsDrawerDirectionActionForMaskedValues(NSInteger direction, MSDynam
                 }
             }
             // If the current reveal direction's pane drag reveal is disabled, cancel the gesture
-            else if (![self paneDragRevealEnabledForDirection:panDrawerDirection] && ![self paneDragCloseEnabledForDirection:panDrawerDirection]) {
+            else if (![self paneDragRevealEnabledForDirection:self.currentDrawerDirection] && ![self paneDragCloseEnabledForDirection:self.currentDrawerDirection]) {
                 gestureRecognizer.enabled = NO;
                 gestureRecognizer.enabled = YES;
                 return;
